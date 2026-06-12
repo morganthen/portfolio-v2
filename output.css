@@ -1,0 +1,218 @@
+.hero {
+  position: relative;
+  background-color: #ff4d26;
+  color: #eee9e7;
+  min-height: 100dvh;
+  width: 100%;
+}
+.hero__header {
+  height: 4rem;
+  color: #eee9e7;
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #ede8e0;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+}
+.hero__logo {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  margin: 0px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 4.8rem;
+}
+.hero__heading {
+  text-transform: uppercase;
+  font-weight: lighter;
+  width: 60%;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+}
+.hero__paragraph {
+  width: 75%;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+}
+.hero__paragraph--highlight {
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.projects {
+  min-height: 100dvh;
+}
+.projects__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  min-height: 100dvh;
+}
+.projects__item {
+  width: 100%;
+  cursor: pointer;
+  background-color: #161616;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  position: relative;
+  padding: 0;
+  border: 0.5px solid rgba(159, 159, 159, 0.12);
+}
+.projects__item:hover {
+  background-color: #ff4d26;
+}
+.projects__item:hover .projects__title {
+  color: #1a1a1a;
+}
+.projects__title {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  margin: 0px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  transition: color 0.2s;
+  font-size: 2rem;
+  color: #ff4d26;
+  font-weight: bold;
+}
+.projects__description {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  color: #eee9e7;
+  width: 70%;
+  margin-top: 12px;
+  min-height: 80px;
+}
+.projects__detail {
+  padding-left: 1rem;
+  font-size: 0.6rem;
+  color: #eee9e7;
+  width: 70%;
+  font-weight: lighter;
+}
+.projects__tech {
+  list-style-type: none;
+}
+
+.modal {
+  height: 100dvh;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 2rem;
+  max-width: none;
+  max-height: none;
+  border: none;
+  background-color: #1a1a1a;
+  color: #eee9e7;
+  overflow-y: auto;
+}
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 32px;
+  color: #eee9e7;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  cursor: pointer;
+}
+.modal__close:hover {
+  color: #ff4d26;
+  transition: color 0.2s;
+}
+.modal__title {
+  text-transform: uppercase;
+  color: #ff4d26;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+.modal__tagline {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #8a8782;
+  margin-top: 0.75rem;
+}
+.modal__year {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.6rem;
+  color: #8a8782;
+  margin-top: 0.25rem;
+}
+.modal__text {
+  max-width: 60ch;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+}
+.modal__spec {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;
+}
+.modal__spec dt {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #8a8782;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(238, 233, 231, 0.15);
+}
+.modal__spec dd {
+  font-size: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(238, 233, 231, 0.15);
+}
+.modal__spec dd a {
+  color: #ff4d26;
+  text-decoration: none;
+}
+.modal__spec dd a:hover {
+  text-decoration: underline;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  min-height: 100dvh;
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=output.css.map */

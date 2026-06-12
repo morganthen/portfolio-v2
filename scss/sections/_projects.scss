@@ -1,0 +1,73 @@
+@use "../partials/colors.scss" as c;
+
+.projects {
+  min-height: 100dvh;
+
+  &__grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    min-height: 100dvh;
+  }
+
+  &__item {
+    width: 100%;
+    cursor: pointer;
+    background-color: c.$panel;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    border: 0.5px solid c.$hairline;
+
+    &:hover {
+      background-color: c.$accent;
+
+      .projects__title {
+        color: c.$ink;
+      }
+    }
+  }
+
+  &__title {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    margin: 0px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transition: color 0.2s;
+    font-size: 2rem;
+    color: c.$accent;
+    font-weight: bold;
+  }
+
+  &__description {
+    font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    padding-left: 1rem;
+    font-size: 0.8rem;
+    color: c.$bone;
+    width: 70%;
+    margin-top: 12px;
+    min-height: 80px;
+  }
+  &__detail {
+    padding-left: 1rem;
+    font-size: 0.6rem;
+    color: c.$bone;
+    width: 70%;
+    font-weight: lighter;
+  }
+
+  &__tech {
+    list-style-type: none;
+  }
+}
