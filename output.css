@@ -160,7 +160,7 @@
 }
 .modal__text {
   max-width: 60ch;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1.6;
   margin-top: 1.25rem;
 }
@@ -191,6 +191,105 @@
 }
 .modal__spec dd a:hover {
   text-decoration: underline;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100dvh;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 2rem;
+  max-width: none;
+  max-height: none;
+  border: none;
+  background-color: #1a1a1a;
+  color: #eee9e7;
+  overflow-y: auto;
+}
+.about__header {
+  text-transform: uppercase;
+  color: #ff4d26;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+.about__descriptions {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;
+}
+.about__descriptions dt {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #8a8782;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(238, 233, 231, 0.15);
+}
+.about__descriptions dd {
+  font-size: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(238, 233, 231, 0.15);
+  overflow-wrap: anywhere;
+}
+.about__descriptions dd a {
+  color: #ff4d26;
+  text-decoration: none;
+}
+.about__descriptions dd a:hover {
+  text-decoration: underline;
+}
+.about__footer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.about__links {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;
+}
+.about__links dt {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #8a8782;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(238, 233, 231, 0.15);
+}
+.about__links dd {
+  font-size: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(238, 233, 231, 0.15);
+  overflow-wrap: anywhere;
+}
+.about__links dd a {
+  color: #ff4d26;
+  text-decoration: none;
+}
+.about__links dd a:hover {
+  text-decoration: underline;
+}
+.about__copyright {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #8a8782;
+  text-align: center;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 * {

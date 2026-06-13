@@ -1,0 +1,96 @@
+@use "../partials/colors.scss" as c;
+
+@mixin mono-label {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: c.$spec;
+}
+
+@mixin card {
+  height: 100dvh;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 2rem;
+  max-width: none;
+  max-height: none;
+  border: none;
+  background-color: c.$ink;
+  color: c.$bone;
+  overflow-y: auto;
+}
+
+@mixin card-title {
+  text-transform: uppercase;
+  color: c.$accent;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+@mixin card-text {
+  max-width: 60ch;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+}
+
+@mixin card-details-title {
+  font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: c.$spec;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(c.$bone, 0.15);
+}
+
+@mixin card-details-description {
+  font-size: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(c.$bone, 0.15);
+
+  a {
+    color: c.$accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin card-specs {
+  max-width: 60ch;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 2rem;
+
+  dt {
+    font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    color: c.$spec;
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(c.$bone, 0.15);
+  }
+
+  dd {
+    font-size: 0.75rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid rgba(c.$bone, 0.15);
+    overflow-wrap: anywhere;
+
+    a {
+      color: c.$accent;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../partials/colors.scss" as c;
+@use "../partials/mixin.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mixin.card;
+
+  &__header {
+    @include mixin.card-title;
+  }
+
+  &__descriptions {
+    @include mixin.card-specs;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__links {
+    @include mixin.card-specs;
+  }
+
+  &__copyright {
+    @include mixin.mono-label;
+    text-align: center;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+}

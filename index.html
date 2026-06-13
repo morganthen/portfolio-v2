@@ -31,7 +31,7 @@
             >full-stack developer // _nology trainee</span
           >
 
-          with four live projects and a genuine love for building things.
+          with four live projects and a love for building things.
         </p>
       </section>
       <section class="projects">
@@ -163,18 +163,15 @@
           multi-tenant Supabase model.
         </p>
         <p class="modal__text">
-          Full Stripe subscription lifecycle handled end-to-end through signed
-          webhooks. Subscribe, cancel, resume and period-end events all update
-          the database and the UI consistently, with a grace-period state on
-          failed payments. Designed the billing layer to be portable so the same
-          pattern can drop into future projects without rewiring.
+          Full Stripe subscription lifecycle through signed webhooks. Subscribe,
+          cancel, resume and period-end and a failed-payment grace state all
+          keep the database and UI in sync. The billing layer is portable across
+          future projects.
         </p>
         <p class="modal__text">
-          Live demo runs in Stripe test mode by design so you can walk the full
-          subscription flow without entering real card details — use 4242 4242
-          4242 4242 with any future expiry and any 3-digit CVC. KYC is complete
-          and live-mode is staged for actual product launch outside the
-          portfolio context.
+          Live demo runs in Stripe test mode — walk the full subscription flow
+          with card 4242 4242 4242 4242, any future expiry, any CVC. KYC is
+          done; live mode is staged for launch.
         </p>
 
         <dl class="modal__spec">
@@ -201,7 +198,19 @@
         <p class="modal__year">[2026]</p>
 
         <p class="modal__text">
-          Speed-reading web app and Chrome extension. RSVP-based reader.
+          Rapid Serial Visual Presentation flashes text one word at a time at a
+          fixed focal point, cutting saccadic eye movement out of reading so
+          content goes faster.
+        </p>
+        <p class="modal__text">
+          Eased punctuation pauses keep the rhythm natural. Font size and WPM
+          adjust mid-session, saved to localStorage. Fully client-side, no
+          backend or accounts — the text is the user's own.
+        </p>
+        <p class="modal__text">
+          A companion Chrome extension, live on the Chrome Web Store with real
+          installs, parses any article — point it at a Wikipedia page and it
+          hands the body text to ocule.app.
         </p>
 
         <dl class="modal__spec">
@@ -217,6 +226,12 @@
               >github.com/morganthen/ocule</a
             >
           </dd>
+          <dt>Extension</dt>
+          <dd>
+            <a href="https://github.com/morganthen/ocule-extension"
+              >github.com/morganthen/ocule-extension</a
+            >
+          </dd>
         </dl>
       </dialog>
 
@@ -228,8 +243,21 @@
         <p class="modal__year">[2026]</p>
 
         <p class="modal__text">
-          Bookmark manager, built twice on purpose. V1 in Node.js + Express +
-          MongoDB; V2 rebuilt in Next.js with PostgreSQL and Prisma.
+          Built twice on purpose. V1 was split-repo Node.js + Express + MongoDB
+          with a separate Vite frontend and CORS. V2 rebuilds it in Next.js with
+          PostgreSQL and Prisma — the long way first made API routes click as a
+          layer over request/response.
+        </p>
+        <p class="modal__text">
+          Scrapes title, description and cover image via Open Graph on URL blur,
+          the trick Pinterest uses on save. Prisma 7's breaking changes from v6
+          (connection URL moved to prisma.config.ts, new driver adapter) sent me
+          to the docs over outdated tutorials.
+        </p>
+        <p class="modal__text">
+          Auth is hand-rolled JWT and bcrypt. Built in Express first, so the
+          Next.js redo reinforced the model — named GET/POST/DELETE exports
+          returning Response objects instead of res.send().
         </p>
 
         <dl class="modal__spec">
@@ -252,38 +280,40 @@
         </dl>
       </dialog>
 
-      <section>
-        <h2>About</h2>
-        <dl>
+      <section class="about">
+        <h2 class="about__header">About</h2>
+        <dl class="about__descriptions">
           <dt>Runtime</dt>
-          <dd>[fill — e.g. Full-stack developer, TypeScript]</dd>
+          <dd>Full-stack developer · TypeScript-first · 1 yr in production</dd>
           <dt>Stack</dt>
           <dd>
-            [fill — your default stack: Next.js, TypeScript, Supabase/Postgres]
+            React, Next.js, TypeScript, Node/Express, PostgreSQL, Prisma,
+            Supabase, Tailwind, MongoDB, Zod
           </dd>
           <dt>Background</dt>
           <dd>
-            A decade in music production, audio engineering and international
-            touring, now building full-stack.
+            Commerce graduate, a decade in music production, audio engineering
+            and international touring, now building full-stack.
           </dd>
-          <dt>Languages</dt>
+          <dt>Spoken Languages</dt>
           <dd>English, Mandarin, Bahasa Malaysia</dd>
           <dt>Location</dt>
-          <dd>Perth, WA · Australian permanent resident</dd>
+          <dd>Australia · Australian permanent resident</dd>
         </dl>
+
+        <footer class="about__footer">
+          <dl class="about__links">
+            <dt>GitHub</dt>
+            <dd>
+              <a href="https://github.com/morganthen">github.com/morganthen</a>
+            </dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:morganthen@me.com">morganthen@me.com</a></dd>
+          </dl>
+
+          <p class="about__copyright">© 2026 Morgan Then</p>
+        </footer>
       </section>
     </main>
-
-    <!-- ===== FOOTER (classless) ===== -->
-    <footer>
-      <ul>
-        <li><a href="https://morganthen.com">morganthen.com</a></li>
-        <li>
-          <a href="https://github.com/morganthen">github.com/morganthen</a>
-        </li>
-        <li><a href="mailto:morganthen@me.com">morganthen@me.com</a></li>
-      </ul>
-      <p>MORGAN</p>
-    </footer>
   </body>
 </html>
