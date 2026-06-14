@@ -25,6 +25,80 @@
     padding: 0;
     border: 0.5px solid c.$hairline;
 
+    // --- hover dot-grid spotlight -------------------------------------
+    // JS writes --mx/--my (cursor position in px). Two dot layers share one
+    // grid: ::before = small dots over the full feather radius, ::after =
+    // larger dots only near the cursor, so dots grow as they approach it.
+    --mx: 50%;
+    --my: 50%;
+    --dot-color: #{c.$bone2};
+    --dot-gap: 10px; // spacing of the grid
+    --reveal: 150px; // outer feather radius
+    --reveal-near: 70px; // inner radius where the big dots show
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0; // above the item background, below the text (z-index 1)
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    // small dots, revealed across the full feather radius
+    &::before {
+      background-image: radial-gradient(
+        circle,
+        var(--dot-color) 1px,
+        transparent 1.5px
+      );
+      background-size: var(--dot-gap) var(--dot-gap);
+      mask-image: radial-gradient(
+        circle var(--reveal) at var(--mx) var(--my),
+        #000 0%,
+        transparent 100%
+      );
+      -webkit-mask-image: radial-gradient(
+        circle var(--reveal) at var(--mx) var(--my),
+        #000 0%,
+        transparent 100%
+      );
+    }
+
+    // larger dots, revealed only near the cursor (same grid, bigger dot)
+    &::after {
+      background-image: radial-gradient(
+        circle,
+        var(--dot-color) 2.2px,
+        transparent 2.7px
+      );
+      background-size: var(--dot-gap) var(--dot-gap);
+      mask-image: radial-gradient(
+        circle var(--reveal-near) at var(--mx) var(--my),
+        #000 0%,
+        transparent 100%
+      );
+      -webkit-mask-image: radial-gradient(
+        circle var(--reveal-near) at var(--mx) var(--my),
+        #000 0%,
+        transparent 100%
+      );
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 0.75;
+    }
+
+    // keep the description block above the dot layers
+    & > div {
+      position: relative;
+      z-index: 1;
+    }
+    // ------------------------------------------------------------------
+
     &:hover {
       background-color: c.$accent;
 
@@ -44,6 +118,7 @@
     cursor: pointer;
     font: inherit;
     position: absolute;
+    z-index: 1; // above the dot-grid overlay
     bottom: 10px;
     right: 0px;
     margin: 0px;

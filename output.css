@@ -151,6 +151,40 @@
   position: relative;
   padding: 0;
   border: 0.5px solid rgba(159, 159, 159, 0.12);
+  --mx: 50%;
+  --my: 50%;
+  --dot-color: rgba(238, 233, 231, 0.7137254902);
+  --dot-gap: 10px;
+  --reveal: 150px;
+  --reveal-near: 70px;
+}
+.projects__item::before, .projects__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.projects__item::before {
+  background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1.5px);
+  background-size: var(--dot-gap) var(--dot-gap);
+  mask-image: radial-gradient(circle var(--reveal) at var(--mx) var(--my), #000 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle var(--reveal) at var(--mx) var(--my), #000 0%, transparent 100%);
+}
+.projects__item::after {
+  background-image: radial-gradient(circle, var(--dot-color) 2.2px, transparent 2.7px);
+  background-size: var(--dot-gap) var(--dot-gap);
+  mask-image: radial-gradient(circle var(--reveal-near) at var(--mx) var(--my), #000 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle var(--reveal-near) at var(--mx) var(--my), #000 0%, transparent 100%);
+}
+.projects__item:hover::before, .projects__item:hover::after {
+  opacity: 0.75;
+}
+.projects__item > div {
+  position: relative;
+  z-index: 1;
 }
 .projects__item:hover {
   background-color: #ff4d26;
@@ -167,6 +201,7 @@
   cursor: pointer;
   font: inherit;
   position: absolute;
+  z-index: 1;
   bottom: 10px;
   right: 0px;
   margin: 0px;
