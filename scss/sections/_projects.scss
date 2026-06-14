@@ -1,4 +1,5 @@
 @use "../partials/colors.scss" as c;
+@use "../partials/mixin.scss";
 
 .projects {
   min-height: 100dvh;
@@ -16,7 +17,7 @@
   &__item {
     width: 100%;
     cursor: pointer;
-    background-color: c.$panel;
+    background-color: c.$ink;
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
@@ -29,6 +30,10 @@
 
       .projects__title {
         color: c.$ink;
+      }
+
+      .projects__detail {
+        color: c.$bone;
       }
     }
   }
@@ -48,6 +53,14 @@
     font-size: 2rem;
     color: c.$accent;
     font-weight: bold;
+
+    @include mixin.normal-mobile {
+      font-size: 2.5rem;
+    }
+
+    @include mixin.tablet {
+      font-size: 3.5rem;
+    }
   }
 
   &__description {
@@ -55,9 +68,22 @@
     padding-left: 1rem;
     font-size: 0.8rem;
     color: c.$bone;
-    width: 70%;
+    width: 80%;
     margin-top: 12px;
     min-height: 80px;
+    @include mixin.normal-mobile {
+      width: 80%;
+      font-size: 1.3rem;
+      padding-top: 1rem;
+      padding-left: 1rem;
+      min-height: 130px;
+    }
+
+    @include mixin.tablet {
+      width: 80%;
+      min-height: 90px;
+      padding-left: 1.5rem;
+    }
   }
   &__detail {
     padding-left: 1rem;
@@ -65,6 +91,18 @@
     color: c.$bone;
     width: 70%;
     font-weight: lighter;
+
+    @include mixin.normal-mobile {
+      font-size: 0.9rem;
+      padding-top: 1rem;
+      padding-left: 1.5rem;
+      color: c.$spec;
+    }
+
+    @include mixin.tablet {
+      font-size: 1.2rem;
+      padding-left: 1.5rem;
+    }
   }
 
   &__tech {

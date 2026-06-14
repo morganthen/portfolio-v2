@@ -1,16 +1,22 @@
 @use "../partials/colors.scss" as c;
+@use "../partials/mixin.scss";
 
 .modal {
-  height: 100dvh;
-  width: 100%;
-  margin: 0;
-  padding: 2rem 2rem;
-  max-width: none;
-  max-height: none;
-  border: none;
-  background-color: c.$ink;
-  color: c.$bone;
-  overflow-y: auto;
+  @include mixin.card;
+
+  @include mixin.desktop {
+    width: min(90vw, 56rem);
+    height: auto;
+    max-height: 85dvh; // never taller than the screen; card scrolls inside
+    margin: auto; // re-enables the dialog's default centring (both axes)
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5); // the "floating" lift
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px); // Safari needs the prefix
+  }
 
   &__close {
     position: absolute;
@@ -32,11 +38,7 @@
   }
 
   &__title {
-    text-transform: uppercase;
-    color: c.$accent;
-    font-size: clamp(2.5rem, 7vw, 5rem);
-    font-weight: 900;
-    line-height: 0.95;
+    @include mixin.card-title;
   }
 
   &__tagline {
@@ -46,6 +48,9 @@
     font-size: 0.8rem;
     color: c.$spec;
     margin-top: 0.75rem;
+    @include mixin.normal-mobile {
+      font-size: 1rem;
+    }
   }
 
   &__year {
@@ -53,45 +58,17 @@
     font-size: 0.6rem;
     color: c.$spec;
     margin-top: 0.25rem;
+
+    @include mixin.normal-mobile {
+      font-size: 0.9rem;
+    }
   }
 
   &__text {
-    max-width: 60ch;
-    font-size: 0.75rem;
-    line-height: 1.6;
-    margin-top: 1.25rem;
+    @include mixin.card-text;
   }
 
   &__spec {
-    max-width: 60ch;
-    margin-top: 1.5rem;
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    column-gap: 2rem;
-
-    dt {
-      font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.75rem;
-      color: c.$spec;
-      padding: 0.75rem 0;
-      border-top: 1px solid rgba(c.$bone, 0.15);
-    }
-
-    dd {
-      font-size: 0.75rem;
-      padding: 0.75rem 0;
-      border-top: 1px solid rgba(c.$bone, 0.15);
-
-      a {
-        color: c.$accent;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
+    @include mixin.card-specs;
   }
 }

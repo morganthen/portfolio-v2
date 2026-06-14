@@ -15,10 +15,15 @@
   padding: 2rem 2rem;
   max-width: none;
   max-height: none;
-  border: none;
+  border: 0.5px solid c.$hairline;
   background-color: c.$ink;
   color: c.$bone;
   overflow-y: auto;
+
+  @include desktop {
+    max-width: 60rem;
+    margin-inline: auto;
+  }
 }
 
 @mixin card-title {
@@ -27,6 +32,14 @@
   font-size: clamp(2.5rem, 7vw, 5rem);
   font-weight: 900;
   line-height: 0.95;
+
+  @include normal-mobile {
+    font-size: 4rem;
+  }
+
+  @include tablet {
+    font-size: 5rem;
+  }
 }
 
 @mixin card-text {
@@ -34,6 +47,12 @@
   font-size: 0.75rem;
   line-height: 1.6;
   margin-top: 1.25rem;
+  @include normal-mobile {
+    font-size: 1rem;
+  }
+  @include tablet {
+    font-size: 1.25rem;
+  }
 }
 
 @mixin card-details-title {
@@ -44,6 +63,9 @@
   color: c.$spec;
   padding: 0.75rem 0;
   border-top: 1px solid rgba(c.$bone, 0.15);
+  @include normal-mobile {
+    font-size: 0.9rem;
+  }
 }
 
 @mixin card-details-description {
@@ -58,6 +80,13 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @include normal-mobile {
+    font-size: 0.9rem;
+  }
+  @include tablet {
+    font-size: 1.25rem;
   }
 }
 
@@ -76,6 +105,13 @@
     color: c.$spec;
     padding: 0.75rem 0;
     border-top: 1px solid rgba(c.$bone, 0.15);
+
+    @include normal-mobile {
+      font-size: 0.9rem;
+    }
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
 
   dd {
@@ -92,5 +128,29 @@
         text-decoration: underline;
       }
     }
+
+    @include normal-mobile {
+      font-size: 0.9rem;
+    }
+    @include tablet {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@mixin normal-mobile {
+  @media (min-width: 414px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
   }
 }
