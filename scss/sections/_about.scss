@@ -14,6 +14,8 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 
   &__header {
     @include mixin.card-title;
@@ -29,7 +31,7 @@
   &__footer {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    flex-grow: 0;
 
     @include mixin.desktop {
       flex-grow: 0;

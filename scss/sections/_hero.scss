@@ -31,7 +31,7 @@
     left: -150px;
     margin: -100px;
     font-family: monospace;
-    font-size: 4.25px;
+    font-size: 4.5px;
     line-height: 1;
     letter-spacing: 0;
     white-space: pre;
@@ -99,6 +99,7 @@
     &--highlight {
       font-style: italic;
       font-weight: bold;
+      color: c.$ink;
       font-family: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
     }
 
