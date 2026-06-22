@@ -148,6 +148,26 @@
     grid-template-rows: repeat(2, 1fr);
   }
 }
+.projects__expand-hint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: "Roboto Mono";
+  font-size: 0.6rem;
+  pointer-events: none;
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  .projects__expand-hint {
+    font-size: 0.8rem;
+  }
+}
+.projects__item:hover .projects__expand-hint {
+  opacity: 1;
+  color: #1a1a1a;
+}
 .projects__item {
   flex: 1;
   display: flex;
@@ -201,6 +221,9 @@
   color: #1a1a1a;
 }
 .projects__item:hover .projects__detail {
+  color: #eee9e7;
+}
+.projects__item:hover .projects__expand-hint {
   color: #eee9e7;
 }
 .projects__title {

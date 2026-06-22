@@ -18,6 +18,26 @@
       grid-template-rows: repeat(2, 1fr);
     }
   }
+  &__expand-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+    font-family: "Roboto Mono";
+    font-size: 0.6rem;
+    pointer-events: none;
+    opacity: 0;
+    @include mixin.tablet {
+      font-size: 0.8rem;
+    }
+  }
+
+  &__item:hover &__expand-hint {
+    opacity: 1;
+    color: c.$ink;
+  }
 
   &__item {
     flex: 1;
@@ -113,6 +133,10 @@
       }
 
       .projects__detail {
+        color: c.$bone;
+      }
+
+      .projects__expand-hint {
         color: c.$bone;
       }
     }
