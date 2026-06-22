@@ -1,5 +1,4 @@
-// ASCII portrait: on-load reveal (noise -> resolve + fade) then a subtle
-// continuous shimmer. One file so nothing competes over textContent.
+// ASCII portrait: on-load reveal (noise -> resolve + fade) then a subtle continuous shimmer. One file so nothing competes over textContent.
 
 (function () {
   const el = document.querySelector(".hero__ascii-photo");
@@ -11,8 +10,8 @@
   const GLYPHS = RAMP.slice(1); // non-space chars, used for noise
 
   // Tuning -------------------------------------------------
-  const REVEAL_MS = 1600; // length of the reveal
-  const TOPDOWN_BIAS = 1.35; // 0 = pure random, 1 = strict top-to-bottom
+  const REVEAL_MS = 2000; // length of the reveal
+  const TOPDOWN_BIAS = 2; // 0 = pure random, 1 = strict top-to-bottom
   const SHIMMER_FPS = 12;
   const SHIMMER_FRACTION = 0.054; // ~0.4% of figure chars per frame
   // --------------------------------------------------------

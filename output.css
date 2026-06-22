@@ -24,34 +24,34 @@
 }
 .hero__ascii-photo {
   position: absolute;
-  bottom: -50px;
-  left: -90px;
-  margin: 0;
+  bottom: 0px;
+  left: -150px;
+  margin: -100px;
   font-family: monospace;
-  font-size: 3px;
+  font-size: 4.25px;
   line-height: 1;
   letter-spacing: 0;
   white-space: pre;
-  color: rgba(238, 233, 231, 0.7137254902);
+  color: rgba(238, 233, 231, 0.5333333333);
   transform-origin: bottom left;
   pointer-events: none;
   user-select: none;
 }
-@keyframes ascii-fade-in {
-  to {
-    opacity: 1;
+@media (min-width: 414px) {
+  .hero__ascii-photo {
+    font-size: 5.25px;
   }
 }
 @media (min-width: 768px) {
   .hero__ascii-photo {
-    font-size: 4px;
+    font-size: 6px;
   }
 }
 @media (min-width: 1024px) {
   .hero__ascii-photo {
-    font-size: 9px;
-    left: -300px;
-    bottom: -450px;
+    font-size: 8px;
+    left: -200px;
+    bottom: -150px;
   }
 }
 .hero__logo {
@@ -153,10 +153,10 @@
   border: 0.5px solid rgba(159, 159, 159, 0.12);
   --mx: 50%;
   --my: 50%;
-  --dot-color: rgba(238, 233, 231, 0.7137254902);
-  --dot-gap: 10px;
-  --reveal: 150px;
-  --reveal-near: 70px;
+  --dot-color: rgba(238, 233, 231, 0.5333333333);
+  --dot-gap: 16px;
+  --reveal: 250px;
+  --reveal-near: 100px;
 }
 .projects__item::before, .projects__item::after {
   content: "";

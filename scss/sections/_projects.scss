@@ -32,9 +32,9 @@
     --mx: 50%;
     --my: 50%;
     --dot-color: #{c.$bone2};
-    --dot-gap: 10px; // spacing of the grid
-    --reveal: 150px; // outer feather radius
-    --reveal-near: 70px; // inner radius where the big dots show
+    --dot-gap: 16px; // spacing of the grid
+    --reveal: 250px; // outer feather radius
+    --reveal-near: 100px; // inner radius where the big dots show
 
     &::before,
     &::after {
